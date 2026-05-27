@@ -1,46 +1,6 @@
-// pipeline {
-//     agent any
-
-//     stages {
-
-//         stage('Git-Clone') {
-//             steps {
-//                 git 'https://github.com/cser-tanishq-verma/Maven-SnakeGame.git'
-//             }
-//         }
-
-//         stage('Build') {
-//             steps {
-//                 bat 'mvn clean compile'
-//             }
-//         }
-
-//         stage('Test') {
-//             steps {
-//                 bat 'mvn test'
-//             }
-//         }
-
-//         stage('Package') {
-//             steps {
-//                 bat 'mvn clean package'
-//             }
-//         }
-//     }
-
-//     post {
-//         success {
-//             echo 'Build Successful'
-//         }
-
-//         failure {
-//             echo 'Build Failed'
-//         }
-//     }
-// }
 pipeline {
     agent any
-    
+
     environment {
         IMAGE_NAME = "snake-game"
         CONTAINER_NAME = "snake-container"
@@ -48,7 +8,7 @@ pipeline {
     stages {
         stage('Clone Repository') {
             steps {
-                git 'YOUR_GITHUB_REPO_URL'
+                git 'https://github.com/cse-gaurav-verma/Maven-Snake.git'
             }
         }
         stage('Build Maven Project') {
